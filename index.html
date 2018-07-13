@@ -94,34 +94,31 @@
                 </div>
             </div>
 
-<!--             <div class="mb-3">
+            <div class="mb-3">
+              <label>Where to claim: </label>
+
               <div class="radio">
-                <label for="venue"><input type="radio" id="venue" name="retrieval" onclick="choice()"> Claim at the Venue</label>
+                <label><input type="radio" id="venue_1" name="retrieval" onclick="choice()"> Symph</label>
               </div>
+              <div id="ven_1" style="display: none;">
+                <label>Address: 350T V. Urgello Street, Sambag II, Cebu City</label></br>
+                <label>Hours: 9:00 am to 5:30 pm, Monday through Friday</label>
+              </div>
+
               <div class="radio">
-                <label for="shipping"><input type="radio" id="shipping" name="retrieval" onclick="choice()"> Ship to Address</label>
+                <label><input type="radio" id="venue_2" name="retrieval" onclick="choice()"> Glory Reborn</label>
               </div>
+              <div id="ven_2" style="display: none;">
+                <label>Address: 77-C Cabreros St Basak San Nicolas, Cebu City</label></br>
+                <label>Hours: 9:00 am to 5:30 pm, Always open</label>
+              </div>
+
               <div class="invalid-feedback" id="invalid_radio">
                   Please choose one.
               </div>
 
-              <div id="ret_add" style="display: none;">
-                <label for="address">Shipping Address</label>
-                <input type="text" class="form-control" id="shipping_add">
-                <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="same-address">
-                  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                </div>
-              </div>
-            </div> -->
-            <!-- Material checked -->
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="materialChecked2" checked>
-            <label class="form-check-label" for="materialChecked2">Material checked</label>
-          </div>
+            </div>
+
             <button id="checkout" class="btn btn-primary btn-lg" type="submit">Pay with ML ePay</button>
           </form>
           <div class="container2">
@@ -195,11 +192,13 @@
 
       // Mode of shirt retrieval
       function choice(){
-        if (document.getElementById('shipping').checked){
-          document.getElementById('ret_add').style.display = 'block';
+        if (document.getElementById('venue_1').checked){
+          document.getElementById('ven_1').style.display = 'block';
+          document.getElementById('ven_2').style.display = 'none';
         }
         else{
-          document.getElementById('ret_add').style.display = 'none';
+          document.getElementById('ven_2').style.display = 'block';
+          document.getElementById('ven_1').style.display = 'none';
         }
       }
 

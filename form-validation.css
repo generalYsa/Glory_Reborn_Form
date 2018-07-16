@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #header{
     background-color: #C1B0D5;
     /*opacity: 10%;*/
@@ -348,4 +349,356 @@ form{
         left: 4%;
     }
    
+=======
+#header{
+    background-color: #C1B0D5;
+    /*opacity: 10%;*/
+    position: relative;
+    width: 100%;
+}
+
+#logo{
+    position: absolute;
+    widows: 60px;
+    height: 60px;
+    left: 5%;
+}
+
+#title{
+  text-align: center;
+  color: #000;
+}
+
+#sub_title{
+  text-align: center;
+  color: #fff;
+  font-weight: lighter;
+  left: 25%;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background: #eeeeee;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: ease .3s;
+}
+
+.displaynone{
+    display:none;
+}
+
+.black .button span {
+  background: #282725;
+}
+
+.lightblue .button span {
+  background: #a4ebf1;
+}
+
+.green .button span {
+  background: #b7d960;
+}
+
+.darkblue .button span {
+  background: #24498f;
+}
+
+.layer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  /*transition: ease .3s;*/
+  z-index: -1;
+}
+/* Create two equal columns that floats next to each other */
+.column-left {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+.column-right {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.container {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    width: 90%;
+    border-radius: 13px;
+    padding: 1.5%;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 4px rgba(19, 35, 47, 0.1);
+    margin-bottom: 4%;
+  /*max-width: 960px;
+  border-radius: 13px;
+  padding: 1.5%;
+  background-color: #fff;
+  box-shadow: 0 4px 4px 4px rgba(19, 35, 47, 0.1);
+  margin-bottom: 4%;*/
+
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+#checkout{
+    margin: 40px 0;
+    background-color: #e55247;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+span.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content>p{
+    text-align: center;
+}
+
+#code{
+    font-size: 45px;
+    color: #e55247;
+    font-weight: 700;
+
+}
+
+#code_des{
+    font-size: 25px;
+    color: #666666;
+}
+
+#add_div{
+    float: right;
+    width: 50%;
+    margin-top: 0;
+}
+
+#myItems{
+    width: 100%;
+    padding: 500%;
+    margin-top: 2%;
+}
+
+/*td>select, td>input{
+    width: 100%;
+}*/
+
+body{
+    background-color: #fff;
+}
+
+#headers td{
+    font-weight: bold;
+    text-align: center;
+    width: 10%;
+    /*font-size: 20px;*/
+}
+
+.header_input{
+    width: 10%;
+    padding-bottom: 3%;
+}
+
+#quantity_header, #shirt_design_header, #shirt_size_header{
+    padding-left: 28px;
+}
+
+#amount_header{
+    padding-left: 20px;
+}
+
+select#shirtDesign, select#shirtSize{
+    margin-left: 5%;
+    width: 80%;
+    border-radius: 5px;
+    padding: 1.5%;
+}
+
+#color{
+    margin-top: 2%;
+}
+
+.button>span:active{
+        border: 2px solid pink;
+}
+
+input#quantity, input#amount{
+    border: 1px solid #a1a1a1;
+    width: 80%;
+    margin-left: 5%;
+    border-radius: 5px;
+    padding: 1.5%;
+}
+
+#add_item{
+    margin-top: 5%;
+    margin-left: 25%;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 5px;
+    color: #fff;
+    background-color: #977BB8;
+    width: 30%;
+    cursor: pointer;
+}
+
+#total_amount{
+    /*float: right;*/
+    position: absolute;
+    right: 3%;
+}
+
+#total_amount > span{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#total_amount #total{
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+input#firstName, input#lastName, input#email, input#phone, input#address{
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+    border-radius: 3px;
+}
+
+.mb-3 label{
+    font-size: 14.5px;
+    color: #a7a7a7;
+}
+
+#val{
+    /*background-color: pink;*/
+    width: 100%;
+    text-align: right;
+    float: right;
+    margin-right: 5%;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+form{
+    margin-top: 60px;
+}
+
+#checkout{
+    margin-top: 0;
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    color: #fff;
+    background-color: #977BB8;
+    width: 25%;
+}
+
+/* MOBILE PORTRAIT LAYOUT */
+@media only screen and (max-width: 768px) {
+    #header{
+        height: 10%;
+    }
+
+    #logo{
+        /*position: absolute;*/
+        widows: 35px;
+        height: 35px;
+        left: 2%;
+        top: 10%;
+    }
+
+    #title{
+        font-size: 20px;
+    }
+
+    #sub_title{
+        position: absolute;
+        width: 60%;
+        text-align: center;
+        font-size: 11px;
+        left: 22%;
+    }
+
+    .container{
+        width: 100%;
+        top: 30%;
+        left: 4%;
+    }
+   
+>>>>>>> 4d5b7636c367008df3f2b12af52cdb0fd944c01f
 }

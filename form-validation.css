@@ -1,10 +1,123 @@
+#header{
+    background-color: #C1B0D5;
+    /*opacity: 10%;*/
+    position: relative;
+    width: 100%;
+}
+
+#logo{
+    position: absolute;
+    widows: 60px;
+    height: 60px;
+    left: 5%;
+}
+
+#title{
+  text-align: center;
+  color: #000;
+}
+
+#sub_title{
+  text-align: center;
+  color: #fff;
+  font-weight: lighter;
+  left: 25%;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button span {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background: #eeeeee;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: ease .3s;
+}
+
+.displaynone{
+    display:none;
+}
+
+.black .button span {
+  background: #282725;
+}
+
+.lightblue .button span {
+  background: #a4ebf1;
+}
+
+.green .button span {
+  background: #b7d960;
+}
+
+.darkblue .button span {
+  background: #24498f;
+}
+
+.layer {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  /*transition: ease .3s;*/
+  z-index: -1;
+}
+/* Create two equal columns that floats next to each other */
+.column-left {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+.column-right {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
 .container {
-  max-width: 960px;
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    width: 90%;
+    border-radius: 13px;
+    padding: 1.5%;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 4px rgba(19, 35, 47, 0.1);
+    margin-bottom: 4%;
+  /*max-width: 960px;
   border-radius: 13px;
   padding: 1.5%;
   background-color: #fff;
   box-shadow: 0 4px 4px 4px rgba(19, 35, 47, 0.1);
-  margin-bottom: 4%;
+  margin-bottom: 4%;*/
 
 }
 
@@ -97,6 +210,7 @@ body{
     font-weight: bold;
     text-align: center;
     width: 10%;
+    /*font-size: 20px;*/
 }
 
 .header_input{
@@ -113,32 +227,60 @@ body{
 }
 
 select#shirtDesign, select#shirtSize{
-    margin-left: 30px;
+    margin-left: 5%;
     width: 80%;
     border-radius: 5px;
     padding: 1.5%;
+}
+
+#color{
+    margin-top: 2%;
+}
+
+.button>span:active{
+        border: 2px solid pink;
 }
 
 input#quantity, input#amount{
     border: 1px solid #a1a1a1;
     width: 80%;
-    margin-left: 15%;
+    margin-left: 5%;
     border-radius: 5px;
     padding: 1.5%;
 }
 
 #add_item{
-    margin-left: 10%;
+    margin-top: 5%;
+    margin-left: 25%;
     border: none;
     border-radius: 25px;
     padding: 10px 5px;
     color: #fff;
     background-color: #977BB8;
-    width: 75%;
+    width: 30%;
     cursor: pointer;
 }
 
-input#firstName, input#lastName, input#email, input#phone, input#address, input#shipping_add{
+#total_amount{
+    /*float: right;*/
+    position: absolute;
+    right: 3%;
+}
+
+#total_amount > span{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#total_amount #total{
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+input#firstName, input#lastName, input#email, input#phone, input#address{
     border: none;
     border-bottom: 1px solid #d3d3d3;
     border-radius: 3px;
@@ -174,55 +316,36 @@ form{
     width: 25%;
 }
 
-/*CAROUSEL*/
-section.awSlider .carousel{
-  display:table;
-  z-index:2;
-  -moz-box-shadow: 0 0 4px #444;
-  -webkit-box-shadow: 0 0 4px #444;
-  box-shadow: 0 0 15px rgba(1,1,1,.5);
-}
+/* MOBILE PORTRAIT LAYOUT */
+@media only screen and (max-width: 768px) {
+    #header{
+        height: 10%;
+    }
 
-section.awSlider{
-  margin:30px auto;
-  padding:30px;
-  position:relative;
-  display:table;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    #logo{
+        /*position: absolute;*/
+        widows: 35px;
+        height: 35px;
+        left: 2%;
+        top: 10%;
+    }
 
-section.awSlider:hover > img{
-  -ms-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity:1;
-}
+    #title{
+        font-size: 20px;
+    }
 
-section.awSlider img{
-   pointer-events: none;
-}
+    #sub_title{
+        position: absolute;
+        width: 60%;
+        text-align: center;
+        font-size: 11px;
+        left: 22%;
+    }
 
-section.awSlider > img{
-  position:absolute;
-  top:30px;
-  z-index:1;
-  transition:all .3s;
-  filter: blur(1.8vw);
-  -webkit-filter: blur(2vw);
-  -moz-filter: blur(2vw); 
-  -o-filter: blur(2vw); 
-  -ms-filter: blur(2vw);
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  opacity:.5;
+    .container{
+        width: 100%;
+        top: 30%;
+        left: 4%;
+    }
+   
 }
-.item{
-    background-color: #977BB8;
-}
-/*CAROUSEL*/

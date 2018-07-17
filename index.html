@@ -19,17 +19,19 @@
   <body class="bg-light">
 
     <div id="header" class="py-5">
-      <img id="logo" src="C:\Users\shaira\Desktop\Glory Reborn Form/logo.png"> <!-- still need to change logo to the other(white?) version -->
+      <img id="logo" src="C:\Users\shaira\Desktop\Glory_Reborn_Form/logo.png"> <!-- still need to change logo to the other(white?) version -->
       <h2 id="title">Glory Reborn T-shirt Order Form</h2> 
       <h6 id="sub_title"> Glory Reborn provides compassionate and holistic care to marginalized moms and babies of Cebu, Philippines. </h6>
     </div>
     <div class="container">
       <div class="row">
         <div class="column-left">
-        <img id="myImage" src="Big Latch On 2018 Shirt.png" style="width:100%; overflow:hidden">
+          <img id="myImage" src="Big Latch On 2018 Shirt 2.png" style="width: 80%; height: 80%; overflow: hidden; margin-left: 20%;">
+          <img id="myImage2" src="Big Latch On 2018 Shirt 2.png" style="width: 100%; height: 100%; overflow: hidden;">
         </div>
+        <!-- <div style="height: 10%; width: 100%;"><img id="myImage2" src="Big Latch On 2018 Shirt 2.png" style="width: 50%; height: 70%; overflow: hidden; margin-left: 30%;"></div> -->
         <div class="column-right needs-validation">
-          <div class="mb-3">
+          <div id="order_headers" class="mb-3">
              <!--  <h3 id="shirt_design_header headers">Shirt Design</h3>
                 <select class="header_input" name="shirtDesign" id="shirtDesign" onchange="selectforprices()">
                           <option disabled selected value=""></option>
@@ -65,30 +67,31 @@
                 <div class="button"><span></span></div>
                 </label>
                 </div> -->
-              <h3 id="quantity_header headers">Quantity</h3>
-                <input class="header_input" type="number" name="quantity" id="quantity" min="1" size="2"  oninput="selectforprices()">
+              <h5 style="width: 50%;" id="quantity_header headers">Quantity</h5>
+              <input class="header_input" type="number" name="quantity" id="quantity" min="1" size="2"  oninput="selectforprices()" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 49 && event.charCode <= 57" >
                 <div class="order invalid-feedback" id="quantity_error">
-                    Please enter your desired number of shirt.
+                    Enter number of shirt.
                 </div>
-              <h3 id="shirt_size_header headers">Shirt Size</h3>
+              <h5 style="width: 50%; margin-top: 5%;" id="shirt_size_header headers">Shirt Size</h5>
                 <select class="header_input" name="shirtSize" id="shirtSize" onchange="selectforprices()">
-                          <option disabled selected value=""></option>
-                          <option value="XS">XS</option>
-                          <option value="S">S</option>
-                          <option value="M">M</option>
-                          <option value="L">L</option>
-                          <option value="XL">XL</option>
+                  <option disabled selected value=""></option>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
                 </select>
                 <div class="order invalid-feedback" id="size_error">
                     Please select a shirt size.
                 </div>
-              <h3 id="amount_header headers">Amount</h3>
+              <h5 style="width: 50%; margin-top: 5%;" id="amount_header headers">Amount</h5>
                 <input class="header_input" readonly type="text" id="amount" name="amount" size="3" value="" />
               <input id="add_item" type="submit" onclick="addItem()" value="Add Item"/>
-              </div>
           </div>
         </div>
+      </div>
       <div class="mb-3" id="showitems" style="visibility: hidden;display: none;">
+        <h4 style="text-align: center;">Order Summary</h4>
             <table id="myItems">
               <tr id="headers">
                 <td id="shirt_design_header">Shirt Name</td>
@@ -101,6 +104,7 @@
             </table>
         <div id="total_amount"><span>Total: </span><input readonly type="text" id="total" name="total" size="5" value="" /></div>
       </div>
+
       <div>
         <div id="billing_add">
           <!-- <h4 class="mb-3">Billing address</h4> -->
@@ -108,14 +112,14 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" required>
+                <input type="text" class="form-control" id="firstName" name="firstName" pattern="[A-Za-z]+" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" required>
+                <input type="text" class="form-control" id="lastName" name="lastName" pattern="[A-Za-z]+" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -123,7 +127,7 @@
             </div>
             <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" required>
+              <input type="email" class="form-control" id="email" name="email" required>
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div>
@@ -131,7 +135,7 @@
 
             <div class="mb-3">
               <label for="phone">Phone number</label>
-              <input type="number" class="form-control" id="phone" pattern="^\d{11}$" required>
+              <input type="tel" class="form-control" id="phone" name="phone" pattern="^(09|\+639)\d{9}$" required>
               <div class="invalid-feedback">
                 Please enter a valid phone number.
               </div>
@@ -139,7 +143,7 @@
 
             <div class="mb-3">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" required>
+              <input type="text" class="form-control" id="address" name="address" required>
               <div class="invalid-feedback">
                 Please enter a valid address.
               </div>
@@ -149,19 +153,19 @@
               <label>Where to claim: </label>
 
               <div class="form-check">
-                <label class="form-check-label"><input type="radio" class="form-check-input" id="venue_1" name="retrieval" onclick="choice()"> Symph</label>
+                <label class="form-check-label"><input type="radio" class="form-check-input" id="venue_1" name="venue" onclick="choice()"> Symph</label>
               </div>
               <div id="ven_1" style="display: none;">
-                <label>Address: 350T V. Urgello Street, Sambag II, Cebu City</label></br>
-                <label>Hours: 9:00 am to 5:30 pm, Monday through Friday</label>
+                <label style="margin-left: 5%;">Address: 350T V. Urgello Street, Sambag II, Cebu City</label></br>
+                <label style="margin-left: 5%;">Hours: 9:00 am to 5:30 pm, Monday through Friday</label>
               </div>
 
               <div class="form-check">
-                <label class="form-check-label"><input type="radio" class="form-check-input" id="venue_2" name="retrieval" onclick="choice()"> Glory Reborn</label>
+                <label class="form-check-label"><input type="radio" class="form-check-input" id="venue_2" name="venue" onclick="choice()"> Glory Reborn</label>
               </div>
               <div id="ven_2" style="display: none;">
-                <label>Address: 77-C Cabreros St Basak San Nicolas, Cebu City</label></br>
-                <label>Hours: 9:00 am to 5:30 pm, Always open</label>
+                <label style="margin-left: 5%;">Address: 77-C Cabreros St Basak San Nicolas, Cebu City</label></br>
+                <label style="margin-left: 5%;">Hours: 9:00 am to 5:30 pm, Always open</label>
               </div>
 
               <div class="invalid-feedback" id="invalid_radio">
@@ -177,8 +181,7 @@
 
         </div>
       </div>
-
-    <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
@@ -208,17 +211,17 @@
 
         window.addEventListener('load', function() {
           var forms = document.getElementsByClassName('needs-validation');
-
           // Loop over them and prevent submission
           var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-              if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
 
-              }
-              else{
+              console.log(choice());
+              console.log(getTotal());
+              if (form.checkValidity() && choice()===1 && getTotal()===1) {
                 alert("success");
+                console.log(form.checkValidity());
               }
               form.classList.add('was-validated');
             }, false);
@@ -242,10 +245,18 @@
         if (document.getElementById('venue_1').checked){
           document.getElementById('ven_1').style.display = 'block';
           document.getElementById('ven_2').style.display = 'none';
+          document.getElementById("invalid_radio").style.display='none';
+          return 1;
         }
-        else{
+        else if(document.getElementById('venue_2').checked){
           document.getElementById('ven_2').style.display = 'block';
           document.getElementById('ven_1').style.display = 'none';
+          document.getElementById("invalid_radio").style.display='none';
+          return 1;
+        }
+        else{
+          document.getElementById("invalid_radio").style.display='block';
+          return 0;
         }
       }
        function submit(){
@@ -286,14 +297,14 @@
             var table = document.getElementById("myItems");
             var row = table.insertRow(1);
             var shirtDesign = row.insertCell(0);
-            // shirtDesign.style.cssText = "font-weight: bold; padding-left: 5%;";
+            shirtDesign.style.cssText = "padding-left: 3%;";
             // var color = row.insertCell(1);
             var quantity = row.insertCell(1);
-            quantity.style.cssText = "padding-left: 10%;";
+            quantity.style.cssText = "padding-left: 11%;";
             var shirtSize = row.insertCell(2);
-            shirtSize.style.cssText = "padding-left: 10%;";
+            shirtSize.style.cssText = "padding-left: 11%;";
             var amount = row.insertCell(3);
-            amount.style.cssText = "padding-left: 10%;";
+            amount.style.cssText = "padding-left: 11%;";
             var remove = row.insertCell(4);
             quantity.innerHTML =  document.getElementById("quantity").value;
             shirtSize.innerHTML = document.getElementById("shirtSize").value;
@@ -305,31 +316,28 @@
             // btnRemove.appendChild(icon);
             btnRemove.type = "button";
             btnRemove.value = " ";
-            btnRemove.style.cssText = "color: #977BB8; background-color: transparent; font-size: 30px; cursor: pointer; margin-left: 35%;"; 
+            btnRemove.style.cssText = "color: #977BB8; background-color: transparent; font-size: 20px; cursor: pointer; margin-top: 5%; margin-left: 50%;"; 
             btnRemove.setAttribute("onclick", "Remove(this);");
             btnRemove.setAttribute("class", "far fa-times-circle");
             btnRemove.setAttribute("title", "Remove item");
             // btnRemove.hover("class", "far fa-times");
 
             $(btnRemove).hover(function() {
-                $(this).css({'color': '#FCBE35', 'margin-left': '38%', 'font-size': '30px'})
+                $(this).css({'color': '#FCBE35', 'margin-left': '51%', 'font-size': '20px'})
                 btnRemove.setAttribute("class", "fas fa-times");
               }, function() {
-                $(this).css({'color': '#977BB8', 'margin-left': '35%', 'font-size': '30px'})
+                $(this).css({'color': '#977BB8', 'margin-left': '50%', 'font-size': '20px'})
                 btnRemove.setAttribute("class", "far fa-times-circle");
               }
             );
-            //  for (var y = 0, length = radios.length; y < length; y++)
-            // {
-            // if (radios[y].checked)
-            // {
-            // radios[y].checked=false;
-            // break;
-            // }
-            // }
             remove.appendChild(btnRemove);
             getTotal();
         }
+        // if(document.getElementById("amount").value!=0){
+        //   document.getElementById("quantity").value='';
+        //   document.getElementById("shirtSize").value='';
+        //   document.getElementById("amount").setAttribute("value",0);
+        // }
         else{
           var quantity_error = document.getElementById("quantity_error");
           var size_error = document.getElementById("size_error");
@@ -343,6 +351,7 @@
           if(size_error.style.display='none' && shirtSize==='') {
             size_error.style.display='block';
           }
+          
         }
     }
 
@@ -492,17 +501,31 @@
         }
         // document.getElementById("val").innerHTML = "Total: &nbsp;" + sumVal;
          document.getElementById("total").setAttribute("value",sumVal);
+        if(document.getElementById("amount").value!=0){
+          document.getElementById("quantity").value='';
+          document.getElementById("shirtSize").value='';
+          document.getElementById("amount").setAttribute("value",0);
+        }
          if(sumVal==0){
           document.getElementById('showitems').style.display = 'none';
-        document.getElementById('showitems').style.visibility = 'hidden';
+          document.getElementById('showitems').style.visibility = 'hidden';
+          addItem();
+          console.log("here at getTotal");
+          return 0;
          }
          else{
           document.getElementById('showitems').style.display = 'block';
           document.getElementById('showitems').style.visibility = 'visible';
+          return 1;
          }
+        if(document.getElementById("amount").value!=0){
+          document.getElementById("quantity").value='';
+          document.getElementById("shirtSize").value='';
+          document.getElementById("amount").setAttribute("value",0);
+        }
     }
 
     </script>
-
+  
   </body>
 </html>

@@ -19,67 +19,73 @@
   <body class="bg-light">
 
     <div id="header" class="py-5">
-      <img id="logo" src="C:\Users\shaira\Desktop\Glory_Reborn_Form/logo.png"> <!-- still need to change logo to the other(white?) version -->
+      <img id="logo" src="C:\Users\shaira\Desktop\Glory Reborn Form/logo.png"> <!-- still need to change logo to the other(white?) version -->
       <h2 id="title">Glory Reborn T-shirt Order Form</h2> 
       <h6 id="sub_title"> Glory Reborn provides compassionate and holistic care to marginalized moms and babies of Cebu, Philippines. </h6>
     </div>
     <div class="container">
       <div class="row">
         <div class="column-left">
-        <img id="myImage" src="Big Latch On 2018 Shirt 2.png" style="width:100%; overflow:hidden">
+        <img id="myImage" src="Big Latch On 2018 Shirt.png" style="width:100%; overflow:hidden">
         </div>
-        <div class="column-right">
-        <div class="mb-3">
-           <!--  <h3 id="shirt_design_header headers">Shirt Design</h3>
-              <select class="header_input" name="shirtDesign" id="shirtDesign" onchange="selectforprices()">
-                        <option disabled selected value=""></option>
-                        <option value="Design 1">Design 1 (P 150) </option>
-                        <option value="Design 2">Design 2 (P 200)</option>
-                        <option value="Design 3">Design 3 (P 250)</option>
-                        <option value="Design 4">Design 4 (P 350)</option>
-              </select> -->
-             <!--  <div id="color" style="visibility: hidden;display: none;">
-              <h3 id="shirt_design_header headers">Color</h3>              
-              
-              <label id="black" class="black">
-                 <input type="radio" name="color" id="blacks" value="black" class="displaynone" onchange="selectforprices()">
-                 <div class="layer"></div>
-                 <div class="button"><span></span></div>
-              </label>
+        <div class="column-right needs-validation">
+          <div class="mb-3">
+             <!--  <h3 id="shirt_design_header headers">Shirt Design</h3>
+                <select class="header_input" name="shirtDesign" id="shirtDesign" onchange="selectforprices()">
+                          <option disabled selected value=""></option>
+                          <option value="Design 1">Design 1 (P 150) </option>
+                          <option value="Design 2">Design 2 (P 200)</option>
+                          <option value="Design 3">Design 3 (P 250)</option>
+                          <option value="Design 4">Design 4 (P 350)</option>
+                </select> -->
+               <!--  <div id="color" style="visibility: hidden;display: none;">
+                <h3 id="shirt_design_header headers">Color</h3>              
+                
+                <label id="black" class="black">
+                   <input type="radio" name="color" id="blacks" value="black" class="displaynone" onchange="selectforprices()">
+                   <div class="layer"></div>
+                   <div class="button"><span></span></div>
+                </label>
 
-              <label id="lightblue" class="lightblue">
-              <input type="radio" name="color" id="lightblues" value="lightblue" class="displaynone" onclick="selectforprices()">
-              <div class="layer"></div>
-              <div class="button"><span></span></div>
-              </label>
+                <label id="lightblue" class="lightblue">
+                <input type="radio" name="color" id="lightblues" value="lightblue" class="displaynone" onclick="selectforprices()">
+                <div class="layer"></div>
+                <div class="button"><span></span></div>
+                </label>
 
-              <label id="green" class="green">
-              <input type="radio" name="color" id="greens" value="green" class="displaynone" onclick="selectforprices()">
-              <div class="layer"></div>
-              <div class="button"><span></span></div>
-              </label>
+                <label id="green" class="green">
+                <input type="radio" name="color" id="greens" value="green" class="displaynone" onclick="selectforprices()">
+                <div class="layer"></div>
+                <div class="button"><span></span></div>
+                </label>
 
-              <label id="darkblue" class="darkblue">
-              <input type="radio" name="color" id="darkblues" value="darkblue" class="displaynone" onclick="selectforprices()">
-              <div class="layer"></div>
-              <div class="button"><span></span></div>
-              </label>
-              </div> -->
-            <h3 id="quantity_header headers">Quantity</h3>
-              <input class="header_input" type="number" name="quantity" id="quantity" min="1" size="2"  oninput="selectforprices()">
-            <h3 id="shirt_size_header headers">Shirt Size</h3>
-              <select class="header_input" name="shirtSize" id="shirtSize" onchange="selectforprices()">
-                        <option disabled selected value=""></option>
-                        <option value="XS">XS</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-              </select>
-            <h3 id="amount_header headers">Amount</h3>
-              <input class="header_input" readonly type="text" id="amount" name="amount" size="3" value="" />
-            <input id="add_item" type="submit" onclick="addItem()" value="Add Item"/>
-            </div>
+                <label id="darkblue" class="darkblue">
+                <input type="radio" name="color" id="darkblues" value="darkblue" class="displaynone" onclick="selectforprices()">
+                <div class="layer"></div>
+                <div class="button"><span></span></div>
+                </label>
+                </div> -->
+              <h3 id="quantity_header headers">Quantity</h3>
+                <input class="header_input" type="number" name="quantity" id="quantity" min="1" size="2"  oninput="selectforprices()">
+                <div class="order invalid-feedback" id="quantity_error">
+                    Please enter your desired number of shirt.
+                </div>
+              <h3 id="shirt_size_header headers">Shirt Size</h3>
+                <select class="header_input" name="shirtSize" id="shirtSize" onchange="selectforprices()">
+                          <option disabled selected value=""></option>
+                          <option value="XS">XS</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                </select>
+                <div class="order invalid-feedback" id="size_error">
+                    Please select a shirt size.
+                </div>
+              <h3 id="amount_header headers">Amount</h3>
+                <input class="header_input" readonly type="text" id="amount" name="amount" size="3" value="" />
+              <input id="add_item" type="submit" onclick="addItem()" value="Add Item"/>
+              </div>
           </div>
         </div>
       <div class="mb-3" id="showitems" style="visibility: hidden;display: none;">
@@ -119,31 +125,39 @@
               <label for="email">Email</label>
               <input type="email" class="form-control" id="email" required>
               <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                Please enter a valid email address.
               </div>
             </div>
 
             <div class="mb-3">
               <label for="phone">Phone number</label>
-              <input type="tel" class="form-control" id="phone" pattern="^\d{11}$" required>
+              <input type="number" class="form-control" id="phone" pattern="^\d{11}$" required>
               <div class="invalid-feedback">
                 Please enter a valid phone number.
               </div>
             </div>
 
             <div class="mb-3">
+              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" required>
+              <div class="invalid-feedback">
+                Please enter a valid address.
+              </div>
+            </div>
+
+            <div class="mb-3">
               <label>Where to claim: </label>
 
-              <div class="radio">
-                <label><input type="radio" id="venue_1" name="retrieval" onclick="choice()"> Symph</label>
+              <div class="form-check">
+                <label class="form-check-label"><input type="radio" class="form-check-input" id="venue_1" name="retrieval" onclick="choice()"> Symph</label>
               </div>
               <div id="ven_1" style="display: none;">
                 <label>Address: 350T V. Urgello Street, Sambag II, Cebu City</label></br>
                 <label>Hours: 9:00 am to 5:30 pm, Monday through Friday</label>
               </div>
 
-              <div class="radio">
-                <label><input type="radio" id="venue_2" name="retrieval" onclick="choice()"> Glory Reborn</label>
+              <div class="form-check">
+                <label class="form-check-label"><input type="radio" class="form-check-input" id="venue_2" name="retrieval" onclick="choice()"> Glory Reborn</label>
               </div>
               <div id="ven_2" style="display: none;">
                 <label>Address: 77-C Cabreros St Basak San Nicolas, Cebu City</label></br>
@@ -198,9 +212,13 @@
           // Loop over them and prevent submission
           var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
+              if (form.checkValidity() === false) {
+
+              }
+              else{
+                alert("success");
               }
               form.classList.add('was-validated');
             }, false);
@@ -313,6 +331,18 @@
             getTotal();
         }
         else{
+          var quantity_error = document.getElementById("quantity_error");
+          var size_error = document.getElementById("size_error");
+
+          var quantity = document.getElementById("quantity").value;
+          var shirtSize = document.getElementById("shirtSize").value;
+
+          if (quantity_error.style.display='none' && quantity===''){
+            quantity_error.style.display='block';
+          }
+          if(size_error.style.display='none' && shirtSize==='') {
+            size_error.style.display='block';
+          }
         }
     }
 
@@ -333,6 +363,19 @@
         price=document.getElementById("quantity").value * 210;
         amount=document.getElementById("amount").getAttribute("value");
         document.getElementById("amount").setAttribute("value",price);
+
+        var quantity_error = document.getElementById("quantity_error");
+        var size_error = document.getElementById("size_error");
+
+        var quantity = document.getElementById("quantity").value;
+        var shirtSize = document.getElementById("shirtSize").value;
+
+        if (quantity_error.style.display='block' && quantity!==''){
+          quantity_error.style.display='none';
+        }
+        if(size_error.style.display='block' && shirtSize!=='') {
+          size_error.style.display='none';
+        }
         // var colorvalue;
         // if(document.getElementById("shirtDesign").value=="Design 1"){
         //     if(document.getElementById("shirtSize").value=="XL"){
@@ -458,8 +501,8 @@
           document.getElementById('showitems').style.visibility = 'visible';
          }
     }
+
     </script>
 
   </body>
-
 </html>
